@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,mathpazo,amsfonts,nicefrac}
+
+\usepackage{kpfonts}
+%\usepackage{fontspec}
+%\setmainfont{Hoefler Text}
+
+\usepackage{media9}
+
+\usepackage{graphicx}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,mindmap,shapes,positioning,patterns,snakes,calc}
+
+\pgfplotsset{every x tick label/.append style={font=\small, yshift=0.2ex}}
+\pgfplotsset{every y tick label/.append style={font=\small, xshift=0.2ex}}
+
+\usepackage{multirow}
+
+\usepackage{amsmath,amsthm,mathrsfs,bm}
+\usepackage{amssymb}% math symbols
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\numberwithin{table}{section}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+}
+\usepackage{color}
+
+% color
+\definecolor{marron}{RGB}{60,30,10}
+\definecolor{darkblue}{RGB}{0,0,80}
+\definecolor{lightblue}{RGB}{80,80,80}
+\definecolor{darkgreen}{RGB}{0,80,0}
+\definecolor{darkgray}{RGB}{0,80,0}
+\definecolor{darkred}{RGB}{80,0,0}
+\definecolor{shadecolor}{rgb}{0.97,0.97,0.97}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{condition}{Condition}[section]
+\newtheorem{conclusion}{Conclusion}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{solution}{Solution}[section]
+
+\renewcommand{\emptyset}{\varnothing}
+\DeclareMathOperator*{\argmax}{\mathrm{\arg\max}}
+\DeclareMathOperator*{\argmin}{\mathrm{\arg\min}}
+\DeclareMathOperator*{\arginf}{\mathrm{\arg\inf}}
+\DeclareMathOperator*{\argsup}{\mathrm{\arg\sup}}
+\DeclareMathOperator{\sgn}{\mathrm{sign}}
+\DeclareMathOperator{\ind}{\mathrm{I}}
+\DeclareMathOperator{\complex}{\mathrm{O}}
+\DeclareMathOperator{\diag}{\mathrm{diag}}
+\DeclareMathOperator{\prob}{\mathrm{Pr}}
+\DeclareMathOperator{\E}{\mathrm{E}}
+\DeclareMathOperator{\var}{\mathrm{var}}
+\DeclareMathOperator{\corr}{\mathrm{corr}}
+\DeclareMathOperator{\cov}{\mathrm{cov}}
+\DeclareMathOperator{\rand}{\mathrm{rand}}
+\DeclareMathOperator{\vect}{\textit{vec}}
+\DeclareMathOperator{\rank}{\textit{rank}}
+\DeclareMathOperator{\tr}{\textit{tr}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\parskip}{0.5em}
+
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\setlength\parindent{0em}
+
+\title{Cocitation Network}
+% Created Tue Mar 20, 2018
+\author{Chunheng Jiang}
+
+\begin{document}
+\maketitle
+
+\noindent
+
+\section{Data}
+
+%\bibliographystyle{unsrt}
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
