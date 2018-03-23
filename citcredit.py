@@ -18,15 +18,8 @@ class Shen(object):
     """
 
     def __init__(self):
-        citnet = CitNet()
-
-        if os.path.exists('citnodes.db'):
-            with open('citnodes.db', 'rb') as fd:
-                self.nodes = pickle.load(fd)
-        else:
-            self.nodes = citnet.parse_nodes()
-            with open('citnodes.db', 'wb') as fd:
-                pickle.dump(self.nodes, fd)
+        with open('citnodes.db', 'rb') as fd:
+            self.nodes = pickle.load(fd)
 
     def allocate(self, ind):
         node = self.nodes[ind]
@@ -73,23 +66,16 @@ class ModifiedShen(Shen):
 if __name__ == '__main__':
     print('')
 
-    # algo = CitNet()
-    # algo.parse_aps()
-
-    # doi indexing table
-    with open('doi.ind', 'rb') as file:
-        ind = pickle.load(file)
-
-    with open('auth.inv.ind', 'rb') as file:
-        inv_ind = pickle.load(file)
+    articles = pd.read_csv('articles.csv', usecols=['id', 'doi'])
+    authors = pd.read_csv('authors.csv')
 
     algo = Shen()
-    articles = list(pd.read_csv('nobelarticles.csv')['article'])
-    for doi in articles:
-        id = ind[doi]
-        aids, cids = algo.allocate(id)
+    articles_nobel = list(pd.read_csv('nobelarticles.csv')['article'])
+    for doi in articles_nobel:
         print(doi)
-        for i in range(len(aids)):
-            aid = aids[i]
-            print('{0} : {1}'.format(inv_ind[aid], cids[i]))
-
+        id = articles[articles.doi == doi].id
+        auth_ids, cids = algo.allocate(id)
+        for i in range(len(auth_ids)):
+            auth = auth_ids[i]
+            print(auth)
+            print('{0} : {1}'.format(authors[authors.id == auth].name, cids[i]))
