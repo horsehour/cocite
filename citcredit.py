@@ -34,25 +34,19 @@ class Shen(object):
             cooccurence += list(refs)
 
         count_cooccurence = {x: cooccurence.count(x) for x in cooccurence}
-        count_cooccurence[ind] = len(citations)
-
         cocited = set().union(*references)
-        cocited.add(ind)
-
         strengths = np.array([count_cooccurence[k] for k in cocited])
 
         creds_mat = np.array(self.get_credit_allocation_mat(authors, cocited))
         creds = np.matmul(strengths, creds_mat)
-        return authors, creds
+        return authors, creds/sum(creds)
 
     def get_credit_allocation_mat(self, authors, cocited):
-        num_auth = len(authors)
-
         mat = []
         for cc in cocited:
             cocited_authors = set(self.nodes[cc].authors)
             ratio_credit = 1.0 / len(cocited_authors)
-            creds = [ratio_credit if authors[i] in cocited else 0 for i in range(num_auth)]
+            creds = [ratio_credit if auth in cocited_authors else 0 for auth in authors]
             mat.append(creds)
         return mat
 
@@ -70,12 +64,11 @@ if __name__ == '__main__':
     authors = pd.read_csv('authors.csv')
 
     algo = Shen()
-    articles_nobel = list(pd.read_csv('nobelarticles.csv')['article'])
+    articles_nobel = list(pd.read_csv('nobel.csv')['article'])
     for doi in articles_nobel:
         print(doi)
-        id = articles[articles.doi == doi].id
+        id = int(articles[articles.doi == doi].id)
         auth_ids, cids = algo.allocate(id)
         for i in range(len(auth_ids)):
             auth = auth_ids[i]
-            print(auth)
-            print('{0} : {1}'.format(authors[authors.id == auth].name, cids[i]))
+            print('{0} : {1}'.format(str(authors[authors.id == auth].name), cids[i]))

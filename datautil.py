@@ -100,7 +100,6 @@ class CitNet(object):
 
                     for auth in group:
                         names = ['givenname', 'middlename', 'surname']
-                        noname = 0
                         for i in range(len(names)):
                             name = names[i]
                             if name in auth:
@@ -115,9 +114,8 @@ class CitNet(object):
                             else:
                                 names[i] = ''
 
-                            if not names[i]:
-                                noname += 1
-
+                        names = self.sort_out_names(names)
+                        noname = sum([1 for name in names if name == ''])
                         if noname == len(names):
                             continue
 
@@ -147,6 +145,26 @@ class CitNet(object):
 
         self.dump_authors()
         self.dump_authorship()
+
+    def sort_out_names(self, names):
+        if names[2] == 'Jr.':
+            names[2] = names[1] + ' Jr.'
+            names[1] = names[0]
+            names[0] = ''
+        elif names[0] == 'and':
+            names[0] = ''
+        elif names[2] == 'and':
+            names[1] = ''
+            names[2] = names[1]
+
+        for i in range(len(names)):
+            name = names[i]
+            if name:
+                name = ''.join([_ for _ in name if not _.isdigit()])
+                name = name.replace('†', '').replace('@f', '')
+                name = name.replace(',', ' ').strip()
+                names[i] = ' '.join(name.split())
+        return names
 
     def dump_authors(self):
         with open('authors.csv', 'w+') as file:
