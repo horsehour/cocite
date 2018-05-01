@@ -1,0 +1,14 @@
+binary aggrement model
+mean field solution
+commitment naming game 
+competing committed groups
+
+m = (b-a)/(b+a)
+r = b + ab/2
+
+variable commitment
+
+
+global risks
+- CARP model
+- energy in controlability minimization

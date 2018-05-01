@@ -157,7 +157,7 @@ Total credits $C$ for all papers, including both the cocited and citing papers.
 
 The qualities of the citing papers are also important, because their importance can affect the cocitation strength vector $s$. Let $w_1,w_2,\ldots,w_\ell$ be the importance score of the citing papers. We modify Shen's method with the information:
 \[
-s'_i = \sum_{j=1}^{\ell} w_i I\{d_i~\textrm{cocites}~p_0,p_j\}.
+s'_i = \sum_{j=1}^{\ell} w_j I\{p_i~\textrm{is cited by}~d_j\}.
 \]
 
 The importance of a paper is proportional to its total credits earned from all its authors:

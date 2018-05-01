@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.5.28)  20 MAR 2018 16:14
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.5.28)  1 MAY 2018 12:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1802,12 +1802,12 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 \@float@every@algorithm=\toks46
 \c@algorithm=\count280
-)
-No file report.aux.
+) (./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 112.
 LaTeX Font Info:    Try loading font information for OML+jkp on input line 112.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
@@ -1880,15 +1880,14 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 112.
 LaTeX Info: Redefining \pageref on input line 112.
 LaTeX Info: Redefining \nameref on input line 112.
+
+(./report.out) (./report.out)
 \@outlinefile=\write4
 \openout4 = `report.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 LaTeX Font Info:    Try loading font information for OT1+zplm on input line 114
 .
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
@@ -1925,38 +1924,31 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
 )
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 125
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+) [1
+
+] [2]
 No file report.bbl.
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 123.
-
-[1
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 123.
- (./report.aux
-
-Package atenddvi Warning: Rerun LaTeX, last page not yet found.
-
-)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 123.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 123.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
+Package atenddvi Info: Last page = 3.
+[3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 166.
+ (./report.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 166.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 166.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
  ) 
 Here is how much of TeX's memory you used:
- 41491 strings out of 493706
- 946486 string characters out of 6145769
- 1078129 words of memory out of 5000000
- 44183 multiletter control sequences out of 15000+600000
- 27591 words of font info for 65 fonts, out of 8000000 for 9000
+ 41553 strings out of 493706
+ 947389 string characters out of 6145769
+ 1081244 words of memory out of 5000000
+ 44234 multiletter control sequences out of 15000+600000
+ 46190 words of font info for 112 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 62i,6n,77p,10347b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,8n,77p,10347b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (1 page).
+Output written on report.pdf (3 pages).

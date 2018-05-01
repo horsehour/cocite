@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.5.28)  21 MAR 2018 15:08
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.5.28)  26 MAR 2018 09:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1854,12 +1854,12 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \RaggedLeftParindent=\skip92
 \RaggedRightParindent=\skip93
 \JustifyingParindent=\skip94
-)
-No file v2.aux.
+) (./v2.aux)
 \openout1 = `v2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 61.
 LaTeX Font Info:    Try loading font information for OML+jkp on input line 61.
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
@@ -1967,12 +1967,10 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 61.
 LaTeX Info: Redefining \pageref on input line 61.
 LaTeX Info: Redefining \nameref on input line 61.
+
+(./v2.out) (./v2.out)
 \@outlinefile=\write5
 \openout5 = `v2.out'.
-
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
@@ -2009,13 +2007,12 @@ your preamble.
 
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 61.
-
-No file v2.nav.
-[1
+ (./v2.nav) [1
 
 ]
 LaTeX Font Info:    Try loading font information for OT1+jkp on input line 80.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
 LaTeX Font Info:    Try loading font information for U+jkpsya on input line 80.
@@ -2159,10 +2156,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
  ) 
 Here is how much of TeX's memory you used:
- 49547 strings out of 493706
- 1135009 string characters out of 6145769
- 1296818 words of memory out of 5000000
- 52082 multiletter control sequences out of 15000+600000
+ 49588 strings out of 493706
+ 1135320 string characters out of 6145769
+ 1297380 words of memory out of 5000000
+ 52115 multiletter control sequences out of 15000+600000
  48216 words of font info for 127 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  58i,15n,79p,10373b,611s stack positions out of 5000i,500n,10000p,200000b,80000s

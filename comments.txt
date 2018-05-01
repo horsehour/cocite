@@ -1,0 +1,79 @@
+Sam Lee
+Limited indiv attention: the distribution of the intrinsic quality
+
+It's anti-instinct to reshare the same message, even the topics you are really really interested in.
+I think the possible reason is the limited memory assumption. Even the amount of message is huge,
+how can you easily forget the stories or topics which you were greatly impressed such that you have 
+to share it to your friends?
+
+
+Aaron Cheng
+Minimum dominating set
+permanent dominating set - controllability
+minimum number of nodes to control the network.
+=> NPC, greedy approximation
+=> ILP problem
+=> approximation method like
+
+ILP is NPC problem, and various methods have been proposed to solve it. The commercial software
+has employed different strategies. As the number of nodes increases, and the structure becomes
+more complex, it becomes harder to solve. The relaxing and bounding methods may be helpful.
+These methods relax the integer constraints and round the values to integers.
+
+Varun Rao
+NBA Resililence
+Team Network -> node (team) -> player network
+=> player network weight: effectiveness difference (defensive+offensive)
+=> overall defensive/offensive
+
+To compute the effectiveness, even the same pair of teams may play in different seasons.
+Their defensive and offensive may be evolved as time goes. How about using all past history
+of their matches and applying the approach of defining the weighted majority graph in voting
+theory.
+
+Nd=min{1,N_unmatched}
+P(kin,kout)->Nd
+->critical driving node
+hub is hard to control, requires lots of driving nodes
+structurally controllable -> controllable
+|-target control/partial control
+
+
+-----------------------
+Cameron//
+eXtraPult
+Balancing partition for computation
+What's the weight means
+How the dynamical network is updated
+-----------------------
+Ge Yan//
+Incorporate the commerical bank asset model into the new model.
+Generic objective function to combine all these models to make it an optimization problem
+
+
+Thur Apr. 5
+Sam Lee
+
+
+
+Connor
+Rumor spreading
+
+
+Jihui Nie
+Parameter tuning, performance change
+
+
+
+
+
+
+
+
+
+
+Tobe
+
+A better visualization stragegy using d3.js or Gephi
+
+Cameron

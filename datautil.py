@@ -59,7 +59,7 @@ class CitNet(object):
     def parse_aps(self):
         journals = 'PR,PRA,PRB,PRC,PRD,PRE,PRI,PRL,PRSTAB,PRSTPER,RMP'.split(',')
         num_articles, num_authors = 0, 0
-        with open('articles.csv', 'w+') as ostream:
+        with open('articles2.csv', 'w+') as ostream:
             ostream.write('id,doi,journal,numauth\n')
 
             for journal in journals:
@@ -135,7 +135,14 @@ class CitNet(object):
                         continue
 
                     print(num_articles, journal)
-                    ostream.write('{0},{1},{2},{3}\n'.format(num_articles, doi, journal, len(authgroup)))
+                    printdate = ''
+                    if 'issue' in entry:
+                        printdate = entry['issue']['printdate']
+                        len = len(printdate)
+                        if len > 4 and '-' in printdate:
+                            ind = printdate.index('-')
+                            printdate = printdate[:ind]
+                    ostream.write('{0},{1},{2},{3},{4}\n'.format(num_articles, doi, printdate, journal, len(authgroup)))
 
                     # recording the authorship
                     for author in authgroup:
@@ -143,8 +150,8 @@ class CitNet(object):
                     num_articles += 1
                 file.close()
 
-        self.dump_authors()
-        self.dump_authorship()
+        # self.dump_authors()
+        # self.dump_authorship()
 
     def sort_out_names(self, names):
         if names[2] == 'Jr.':
@@ -214,7 +221,22 @@ class CitNode(object):
         self.citations = set()
 
 
+def citnet():
+    with open('citnodes.db', 'rb') as fd:
+        nodes = pickle.load(fd)
+
+        with open('citnet2.csv', 'a') as file:
+            file.write('Source,Target\n')
+            for citing in nodes.keys():
+                cited = nodes[citing].references
+
+                entries = [str(citing) + ',' + str(c) for c in cited]
+                lines = '\n'.join(entries) + '\n'
+                file.write(lines)
+
+
 if __name__ == '__main__':
     citnet = CitNet()
     citnet.parse_aps()
-    citnet.parse_nodes()
+    # citnet.parse_nodes()
+    # citnet()
