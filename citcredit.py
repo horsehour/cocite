@@ -147,6 +147,8 @@ class IntrinsicCredit():
 
     def build_matrices(self):
         for i in range(self.m):
+            print(i)
+
             node = self.nodes[i]
             authors = node.authors
             if authors:
@@ -166,15 +168,29 @@ class IntrinsicCredit():
                 self.S[k][i] = cooccurence.count(k)
 
     def compute(self, exact=True, alpha=0.1, num_iter=100, epsilon=1.0e-10):
+        print('building matrices...')
         self.build_matrices()
+        print('computing credits...')
 
         d = self.S - np.identity(self.m)
         ddt = np.matmul(d, np.matrix.transpose(d))
         if exact:
-            creds = -np.matmul(self.B, pinv(ddt))
+            self.C = -np.matmul(self.B, pinv(ddt))
             with open('credit.db', 'wb') as fd:
-                pickle.dump(creds, fd)
+                pickle.dump(self.C, fd)
 
+    def allocate(self, ind):
+        node = self.nodes[ind]
+        authors = node.authors
+
+        if not authors:
+            return authors, []
+
+        if len(authors) == 1:
+            return authors, [1.0]
+
+        creds = [self.C[a][ind] for a in authors]
+        return authors, creds
 
 if __name__ == '__main__':
     print('')
@@ -182,9 +198,11 @@ if __name__ == '__main__':
     articles = pd.read_csv('articles.csv', usecols=['id', 'doi'])
     authors = pd.read_csv('authors.csv')
 
-    algo = Shen()
+    # algo = Shen()
     # algo = SimpleImportanceBased()
     # algo = PRImportanceBased()
+    algo = IntrinsicCredit()
+    algo.compute()
 
     awardings = pd.read_csv('nobel.csv')
     fmt = '{0},{1},{2},{3},{4}\n'
@@ -200,3 +218,4 @@ if __name__ == '__main__':
                 name = found['name'].values[0]
                 nobel = found['nobelwinner'].values[0]
                 file.write(fmt.format(id, row.article, name, credits[i], nobel))
+

@@ -121,7 +121,7 @@
 \]
 where $N$ is the total number of nodes, $I_j$ is the incoming nodes to $j$, $O_k$ is the outgoing nodes from $j$, $d \in(0,1)$ is the damping factor, it's the probability of following the out-links to the next node.
 
-\section{Iterative Approach}
+\section{Intrinsic Credits}
 Let $\mathcal P=\{p_1,p_2,\ldots,p_m\}$ be the entire set of articles, $\mathcal A=\{a_1,a_2,\ldots,a_n\}$ be all the authors appeared in $\mathcal P$. Each author may have multiple works, and each paper may have multiple coauthors. Let $A_i$ be the coauthors of $p_i$. We assume that the credit of a paper is allocated among all the authors in $\mathcal A$. The credit allocation can be considered as the mechanism of intrinsic value allocation, reflecting the contribution, directly or indirectly from each researchers. Let $C\in \mathbb R^{n\times m}$ be the intrinsic credit allocation matrix of $m$ papers over $n$ authors.
 
 The Shen-Barabasi credit allocation approach allocates credits based on the recognition from a community of the co-cited papers. The co-cited papers play as a committee, each of them has an independent credit allocation over the coauthors of the target paper. However, the credit allocation values the relative contribution from the coauthors in subject but completely ignoring other authors' contribution. The credit allocation is definitely inconsistent with the true allocation.
@@ -151,8 +151,9 @@ C=-B[(S-I)(S-I)^T]^{\dagger}/2,
 \]
 where $A^\dagger$ stands for the pseudo-inverse.
 
-However, when the matrix is large, the pseudo-inverse computation may become very time-consuming. An alternative will be the iterative approach.
+However, when the number of papers or the authors becomes very large, even the storage of these matrices becomes prohibitively expensive, it's infeasible to conduct the pseudo-inverse computation. 
 
+Considering the sparsity of these matrices, the iterative updating mode may be a better choice.
 Let the initial guess $C_0$ be a column stochastic matrix, with each coauthor of the paper the same amount of credits. With the GD method, it's updated following the rule:
 \[
 C_t \leftarrow C_{t-1} + \alpha [2C_{t-1}(S-I)(S-I)^T + B],
